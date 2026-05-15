@@ -185,7 +185,7 @@ kubectl get pvc -n lab3
 kubectl port-forward pod/lab3-11477027-stateful-0 -n lab3 30081:80 --address 0.0.0.0
 
 # 瀏覽器存取
-http://127.0.0.1:30081
+http://{masterip}:30081
 ```
 
 ![port-forward 存取](img/21.png)
@@ -197,7 +197,7 @@ kubectl delete pod lab3-11477027-stateful-0 -n lab3
 kubectl port-forward pod/lab3-11477027-stateful-0 -n lab3 30081:80 --address 0.0.0.0
 
 # 瀏覽器存取
-http://127.0.0.1:30081
+http://{masterip}:30081
 ```
 
 刪除後 StatefulSet 會以**相同名稱**重建 Pod，且資料仍透過 PVC 保留。
