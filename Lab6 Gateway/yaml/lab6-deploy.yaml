@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab6-v1-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lab6-pod
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: lab6-pod
+        version: v1
+    spec:
+      containers:
+      - name: lab6-container
+        image: {repo}:lab6
+        ports:
+        - containerPort: 80
+        env:
+        - name: POD_NAME
+          valueFrom: { fieldRef: { fieldPath: metadata.name } }
+        - name: POD_IP
+          valueFrom: { fieldRef: { fieldPath: status.podIP } }
+        - name: POD_NAMESPACE
+          valueFrom: { fieldRef: { fieldPath: metadata.namespace } }
+        - name: NODE_NAME
+          valueFrom: { fieldRef: { fieldPath: spec.nodeName } }
+        - name: NODE_IP
+          valueFrom: { fieldRef: { fieldPath: status.hostIP } }
+        - name: APP_VERSION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['version']
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab6-v2-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lab6-pod
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: lab6-pod
+        version: v2
+    spec:
+      containers:
+      - name: lab6-container
+        image: {repo}:lab6
+        ports:
+        - containerPort: 80
+        env:
+        - name: POD_NAME
+          valueFrom: { fieldRef: { fieldPath: metadata.name } }
+        - name: POD_IP
+          valueFrom: { fieldRef: { fieldPath: status.podIP } }
+        - name: POD_NAMESPACE
+          valueFrom: { fieldRef: { fieldPath: metadata.namespace } }
+        - name: NODE_NAME
+          valueFrom: { fieldRef: { fieldPath: spec.nodeName } }
+        - name: NODE_IP
+          valueFrom: { fieldRef: { fieldPath: status.hostIP } }
+        - name: APP_VERSION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['version']

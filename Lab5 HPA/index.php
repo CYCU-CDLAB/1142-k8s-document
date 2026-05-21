@@ -95,3 +95,4 @@ tick();
 
 <p style="color:#666;">按下後不要離開頁面，看上面的 CPU% 變化。</p>
 
+</body></html>
