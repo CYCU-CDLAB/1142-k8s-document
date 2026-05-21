@@ -8,7 +8,7 @@ spec:                               # stateful 的規格設定
   replicas: 3                       # 希望維持 3 個 Pod（期望狀態）
   selector:                         # 用來選擇屬於這個 Deployment 的 Pod
     matchLabels:                    # 條件：標籤必須符合
-      app: lab3-state-pod                 # 只管理 label 為 app=lab3-state-pod 的 Pod
+      app: lab3-state-pod           # 只管理 label 為 app=lab3-state-pod 的 Pod
   template:                         # Pod 範本（Deployment 會用這個建立新的 ReplicaSet）
     metadata:
       labels:
