@@ -14,4 +14,3 @@ spec:                                # PVC 的規格設定
   resources:                         # PVC 申請的資源需求
     requests:                        # request 表示「至少需要多少空間」
       storage: 200Mi                 # 申請 200MiB 的儲存空間（K8s 會找或建立一個符合的 PersistentVolume）
-
