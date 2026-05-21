@@ -146,11 +146,7 @@ http://{loadbalancer ip}/old-web
 http://{loadbalancer ip}/api/v2
 ```
 
-> **截圖一**：`/old-web` 被 redirect
-
 ![/old-web redirect](img/14-1.png)
-
-> **截圖二**：`/api/v2` 被 rewrite 後打到 V2 服務
 
 ![/api/v2 rewrite](img/14-2.png)
 
