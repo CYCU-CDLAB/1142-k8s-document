@@ -8,7 +8,7 @@ spec:
   scaleTargetRef:                   # 指定 HPA 要監控並調整副本數的目標物件
     apiVersion: apps/v1             # 目標物件的 API 版本
     kind: Deployment                # 目標物件種類（這裡是 Deployment）
-    name: lab5-11477027-deploy           # 要自動擴展的 Deployment 名稱
+    name: lab5-{學號}-deploy         # 要自動擴展的 Deployment 名稱
 
   minReplicas: 1                    # Pod 最少維持 1 個（HPA 不會縮到 0）
   maxReplicas: 5                    # Pod 最多可以擴展到 5 個
