@@ -4,7 +4,7 @@ metadata:                           # 基本資訊
   name: lab3-{學號}-stateful        # stateful 名稱（cluster 內唯一）
   namespace: lab3
 spec:                               # stateful 的規格設定
-  serviceName: lab3-headless          # StatefulSet 必須綁定一個 Headless Service
+  serviceName: lab3-headless        # StatefulSet 必須綁定一個 Headless Service
   replicas: 3                       # 希望維持 3 個 Pod（期望狀態）
   selector:                         # 用來選擇屬於這個 Deployment 的 Pod
     matchLabels:                    # 條件：標籤必須符合
@@ -17,7 +17,7 @@ spec:                               # stateful 的規格設定
     spec:
       containers:
       - name: lab3-pod              # 容器名稱（Pod 內識別用）
-        image: {repo}:lab3  # 使用的 Docker Image（私有 registry）
+        image: {repo}:lab3          # 使用的 Docker Image（來自 docker hub repository）
         ports:
         - containerPort: 80         # 容器內監聽的 port（提供 HTTP 服務）
         env:
