@@ -1,22 +1,22 @@
 apiVersion: apps/v1                 # 使用 apps/v1 API（Deployment 屬於 apps 群組）
 kind: Deployment                    # 資源種類：Deployment（用來管理 ReplicaSet 與滾動更新）
 metadata:                           # 基本資訊
-  name: lab3-{學號}-deploy        # Deployment 名稱（cluster 內唯一）
+  name: lab3-{學號}-deploy          # Deployment 名稱（cluster 內唯一）
   namespace: lab3
 spec:                               # Deployment 的規格設定
   replicas: 3                       # 希望維持 3 個 Pod（期望狀態）
   selector:                         # 用來選擇屬於這個 Deployment 的 Pod
     matchLabels:                    # 條件：標籤必須符合
-      app: lab3-pod                 # 只管理 label 為 app=lab1-deploy-pod 的 Pod
+      app: lab3-pod                 # 只管理 label 為 app=lab3-pod 的 Pod
   template:                         # Pod 範本（Deployment 會用這個建立新的 ReplicaSet）
     metadata:
       labels:
-        app: lab3-pod        # 必須與 selector.matchLabels 一致
+        app: lab3-pod               # 必須與 selector.matchLabels 一致
         version: v1                 # 自訂版本標籤（可用於版本區分、分流觀察）
     spec:
       containers:
-      - name: lab3-pod       # 容器名稱（Pod 內識別用）
-        image: {repo}:lab3  # 使用的 Docker Image（私有 registry）
+      - name: lab3-pod              # 容器名稱（Pod 內識別用）
+        image: {repo}:lab3          # 使用的 Docker Image（來自 docker hub repository）
         imagePullPolicy: Always
         ports:
         - containerPort: 80         # 容器內監聽的 port（提供 HTTP 服務）
@@ -35,4 +35,3 @@ spec:                               # Deployment 的規格設定
           valueFrom:
             fieldRef:
               fieldPath: metadata.labels['version']
-
