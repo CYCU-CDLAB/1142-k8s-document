@@ -11,12 +11,6 @@ spec:
         type: Exact
         value: /old-web
     filters:
-    - type: URLRewrite
-      urlRewrite:
-        path:
-          type: ReplacePrefixMatch
-          replacePrefixMatch: /
-    filters:
     - type: RequestRedirect
       requestRedirect:
         path:
