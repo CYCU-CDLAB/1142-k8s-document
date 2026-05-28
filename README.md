@@ -8,3 +8,4 @@
 - Lab4
 - [Lab5 HPA](Lab5%20HPA/Lab5.md)
 - [Lab6 Gateway](Lab6%20Gateway/Lab6.md)
+- [Lab Project](lab-project/lab-project.md)
