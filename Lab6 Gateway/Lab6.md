@@ -19,7 +19,7 @@ vim index.php
 ```bash
 docker build -t k8slab:lab6 .
 docker tag k8slab:lab6 {repo}:lab6
-docker push {repo}/k8slab:lab6
+docker push {repo}:lab6
 ```
 
 ![Build & Push image](img/4.png)
