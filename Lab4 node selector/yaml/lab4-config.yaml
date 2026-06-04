@@ -1,0 +1,10 @@
+apiVersion: v1                                # 使用 Kubernetes core/v1 API（ConfigMap 屬於 core/v1）
+kind: ConfigMap                               # 資源種類：ConfigMap（用來存放設定值，不適合放敏感資訊）
+metadata:                                     # 物件的基本資訊
+  name: lab4-{學號}-config                    # ConfigMap 名稱（Pod 之後會用這個名字去掛載或讀取）
+  namespace: lab4                             # ConfigMap 所在的 namespace（通常要和使用它的 Pod 在同一個 namespace）
+data:                                         # 真正存放設定內容的地方（key-value 格式）
+  TITLE: "Lab4 - ConfigMap Live Update"       # 設定鍵 TITLE：用來控制網頁標題
+  BG_COLOR: "#eef6ff"                         # 設定鍵 BG_COLOR：用來控制網頁背景顏色
+  NOTICE: "這段公告來自 ConfigMap（volume 掛載），改了會立刻影響網頁！" # 設定鍵 NOTICE：用來顯示公告內容
+

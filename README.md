@@ -5,7 +5,7 @@
 - [Lab1 Pod / ReplicaSet / Deployment](Lab1%20deployment/Lab1.md)
 - [Lab2 Service](Lab2%20service/Lab2.md)
 - [Lab3 Storage(PV, PVC) / StatefulSet](Lab3%20storage/Lab3.md)
-- Lab4
+- [Lab4 Node Selector](Lab4%20node%20selector/Lab4.md)
 - [Lab5 HPA](Lab5%20HPA/Lab5.md)
 - [Lab6 Gateway](Lab6%20Gateway/Lab6.md)
 - [Lab Project](lab-project/lab-project.md)
