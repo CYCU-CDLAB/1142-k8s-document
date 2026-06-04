@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: jerry890926/k8s-images:lab-project
+          image: {repo}:lab-project
           imagePullPolicy: IfNotPresent
           command: ["sh", "-c"]
           args:
