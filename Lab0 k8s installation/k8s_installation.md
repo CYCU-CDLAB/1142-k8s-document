@@ -95,6 +95,11 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 
 ![install-docker](img/slide15.png)
 
+### 5.3 user 加入docker group
+```bash
+sudo usermod -aG docker $USER
+```
+
 ---
 
 ## Step 6：Kernel 參數設定（All Node）
@@ -175,6 +180,12 @@ sudo systemctl restart containerd
 sudo systemctl restart kubelet
 ```
 
+安裝 crictl（cri-tools 套件，**各節點**）並設定 runtime endpoint：
+
+```bash
+sudo apt-get update && sudo apt-get install -y cri-tools
+sudo crictl config --set runtime-endpoint=unix:///run/containerd/containerd.sock
+```
 
 ---
 
